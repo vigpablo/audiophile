@@ -1,0 +1,101 @@
+<div class="relative">
+  <div *ngIf="showBg" class="bg-black opacity-60 h-full w-full bg-cover absolute z-20" (click)="clickOutsideCart()"></div>
+  <header class="bg-semiblack h-[600px] bg-image-header-mobile bg-contain bg-center bg-no-repeat md:h-[729px] md:px-10
+    md:bg-image-hader-tablet xl:h-[729px] xl:px-40 xl:bg-image-hader-desktop xl:bg-contain"
+    >
+    <app-header></app-header>
+    <div class="flex flex-col text-center items-center py-28 xl:text-start xl:items-start">
+      <div class="text-overline text-platadark tracking-widest pb-6 md:pb-7">
+        NEW PRODUCT
+      </div>
+      <div class="text-H3 font-semibold text-platalight tracking-wide pb-6 md:pb-7 md:text-H1 md:font-medium md:tracking-normal">
+        XX99 MARK II <br>HEADPHONES
+      </div>
+      <div class="text-body text-platamedium pb-7 md:pb-10">
+        Experience natural, lifelike audio and exceptional <br class="hiddden md:block">build quality made for the passionate music <br class="hiddden md:block">enthusiast.
+      </div>
+      <div routerLink="/headphones/markii" class="h-12 w-40 bg-marron hover:bg-beige hover:cursor-pointer text-subtitle tracking-wide font-medium text-platalight text-center pt-3">
+        SEE PRODUCT
+      </div>
+    </div>
+  </header>
+
+  <main class="px-6 md:px-10 xl:px-40 md:mt-16" (click)="outsideHamMenu()">
+    <section class="flex flex-col items-center md:flex-row md:justify-between md:space-x-3">
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-headphones.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-14">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">HEADPHONES</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="/headphones" class="text-overline text-platadark hover:text-marron font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-speakers.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-16">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">SPEAKERS</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="/speakers" class="text-overline text-platadark hover:text-marron font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-earphones.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-16">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">EARPHONES</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="/earphones" class="text-overline text-platadark hover:text-marron font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col items-center mt-28 space-y-6 md:space-y-8 xl:space-y-11 relative">
+      <div class="h-[600px] w-[327px] bg-marron rounded-lg flex flex-col items-center md:h-[720px] md:w-[689px] xl:w-[1110px] xl:h-[560px]">
+        <img src="../../assets/home/desktop/pattern-circles.svg" alt="" class="w-[500px] absolute bottom-[980px] xl:w-[1000px] xl:bottom-[300px] xl:right[1500px]">
+        <img src="../../assets/home/mobile/image-speaker-zx9.png" alt="" class="w-40 z-10 mt-16 md:hidden">
+        <img src="../../assets/home/tablet/image-speaker-zx9.png" alt="" class="w-48 z-10 mt-16 hidden md:block xl:hidden">
+        <div class="flex flex-col xl:flex-row">
+          <img src="../../assets/home/desktop/image-speaker-zx9.png" alt="" class="w-96 z-10 mt-[107px] ml-12 hidden xl:block overflow-clip ">
+          <div class="flex flex-col items-center xl:mt-[60px] text-center xl:ml-28 xl:items-start xl:text-start">
+            <h2 class="text-H2 text-platalight font-medium z-10 mt-9 md:text-H1 md:mt-16">ZX9 <br>SPEAKER</h2>
+            <p class="text-body text-platalight px-4 py-5 md:pb-9 xl:px-0">Upgrade to premium speakers that are <br>phenomenally built to deliver truly remarkable
+                <br class="hidden md:block">sound.</p
+            >
+            <div routerLink="/speakers/zx9" class="h-12 w-40 bg-plomo hover:bg-platadark hover:cursor-pointer text-subtitle tracking-wide font-medium text-platalight text-center pt-3 z-10">
+              SEE PRODUCT
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="h-[320px] w-[327px] z-10 flex flex-col items-center relative mt-4 md:w-[689px] xl:w-[1110px] xl:h-[320px]">
+        <img src="../../assets/home/mobile/image-speaker-zx7.jpg" alt="" class="rounded-lg md:hidden">
+        <img src="../../assets/home/tablet/image-speaker-zx7.jpg" alt="" class="rounded-lg hidden md:block xl:hidden">
+        <img src="../../assets/home/desktop/image-speaker-zx7.jpg" alt="" class="rounded-lg hidden xl:block">
+        <div class="absolute bottom-[102px] left-7 right-24 md:left-16">
+          <h4 class="text-H4 text-plomo font-semibold tracking-normal">ZX7 SPEAKER</h4>
+          <div routerLink="/speakers/zx7" class="h-12 w-40 border-plomo border text-subtitle text-plomo hover:bg-plomo hover:text-platalight hover:cursor-pointer tracking-wide font-semibold text-center pt-3 mt-9">
+            SEE PRODUCT
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col items-center md:flex-row md:space-x-3 xl:space-x-7">
+        <div class="w-[327px] flex flex-col md:w-[339px] md:h-[320px] xl:w-[540px] xl:h-[320px]">
+          <img src="../../assets/home/mobile/image-earphones-yx1.jpg" alt="" class="rounded-lg md:hidden">
+          <img src="../../assets/home/tablet/image-earphones-yx1.jpg" alt="" class="hidden rounded-lg md:block xl:hidden">
+          <img src="../../assets/home/desktop/image-earphones-yx1.jpg" alt="" class="hidden rounded-lg xl:block">
+        </div>
+        <div class="h-52 w-[327px] rounded-lg bg-plata flex flex-col items-start justify-center md:w-[339px] md:h-[320px] xl:w-[540px] xl:h-[320px]">
+          <h4 class="text-H4 text-plomo font-semibold tracking-normal pl-6 py-10 md:pl-10 xl:pl-20">YX1 EARPHONES</h4>
+          <div routerLink="/earphones/yx1" class="h-12 w-40 border-plomo border text-subtitle text-plomo hover:bg-plomo hover:text-platalight hover:cursor-pointer tracking-wide font-semibold text-center ml-6 pt-3 md:mb-10 md:ml-10 xl:ml-20">
+            SEE PRODUCT
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</div>
+
+
+
+
+
+

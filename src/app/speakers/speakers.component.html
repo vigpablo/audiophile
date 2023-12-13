@@ -1,0 +1,83 @@
+<div class="relative">
+  <div *ngIf="showBg" class="bg-black opacity-60 h-full w-full bg-cover absolute z-20" (click)="clickOutsideCart()"></div>
+  <header class="bg-black md:px-10 xl:px-40 text-white w-full">
+    <app-header></app-header>
+    <div class="bg-black flex items-center justify-center h-36 text-H5 font-medium tracking-normal">
+      SPEAKERS
+    </div>
+  </header>
+  <main class="px-6 md:px-10 mt-16 md:mt-32 xl:px-40 flex flex-col items-center" (click)="outsideHamMenu()">
+    <section class="flex flex-col items-center space-y-32 md:space-y-32 xl:space-y-40">
+      <div class="flex flex-col items-center xl:space-x-20 xl:flex-row">
+        <div>
+        <img src="../../assets/product-zx9-speaker/desktop/image-category-page-preview.jpg" alt="" class="h-[560px] hidden rounded-lg xl:block">
+        <img src="../../assets/product-zx9-speaker/tablet/image-category-page-preview.jpg" alt="" class="h-[352px] hidden rounded-lg md:block xl:hidden">
+        <img src="../../assets/product-zx9-speaker/mobile/image-product.jpg" alt="" class="h-[352px] md:hidden">
+        </div>
+        <div class="flex flex-col justify-center items-center mt-8 md:mt-14 xl:mt-0 xl:items-start">
+          <span class="text-overline text-marron tracking-widest font-medium">
+            NEW PRODUCT
+          </span>
+          <h3 class="text-H4 text-plomo font-semibold mt-6 tracking-normal md:text-H2 text-center xl:text-start"> ZX9 <br>SPEAKER</h3>
+          <P class="text-body text-platadark font-normal my-10 text-center xl:text-left w-[352px] md:w-[auto]">
+            Upgrade your sound system with the all new ZX9 active <br class="hidden xl:block">speaker. It’s a bookshelf <br class="hidden md:block xl:hidden">speaker
+            system that offers truly <br class="hidden xl:block">wireless connectivity - creating new possibilities <br class="hidden md:block xl:hidden">for more
+            <br class="hidden xl:block">pleasing and practical audio setups.
+          </P>
+          <div routerLink="/speakers/zx9" class="h-12 w-40 bg-marron hover:bg-beige hover:cursor-pointer text-subtitle tracking-wide font-medium text-platalight text-center pt-3">
+            SEE PRODUCT
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center xl:space-x-20 xl:flex-row">
+        <img src="../../assets/product-zx7-speaker/tablet/image-category-page-preview.jpg" alt="" class="h-[352px] hidden rounded-lg md:block xl:hidden">
+        <img src="../../assets/product-zx7-speaker/mobile/image-product.jpg" alt="" class="h-[352px] rounded-lg md:hidden">
+        <div class="flex flex-col justify-center items-center mt-4 md:mt-14 xl:mt-0 xl:items-start">
+          <h3 class="text-H4 text-plomo font-semibold mt-5 tracking-normal md:text-H2 text-center xl:text-start"> ZX7 <br>SPEAKER</h3>
+          <P class="text-body text-platadark font-normal my-10 text-center xl:text-left w-[352px] md:w-[auto]">
+            Stream high quality sound wirelessly with minimal loss. The ZX7 <br class="hidden xl:block">bookshelf <br class="hidden md:block xl:hidden">speaker uses
+            high-end audiophile components that <br class="hidden xl:block">represents the top of the line <br class="hidden md:block xl:hidden">powered speakers
+            for home or <br class="hidden xl:block">studio use.
+          </P>
+          <div routerLink="/speakers/zx7" class="h-12 w-40 bg-marron hover:bg-beige hover:cursor-pointer text-subtitle tracking-wide font-medium text-platalight text-center pt-3">
+            SEE PRODUCT
+          </div>
+        </div>
+        <div>
+        <img src="../../assets/product-zx7-speaker/desktop/image-product.jpg" alt="" class="h-[560px] hidden rounded-lg xl:block">
+        </div>
+      </div>
+
+
+    </section>
+    <section class="flex flex-col items-center md:flex-row md:justify-center md:w-[689px] md:space-x-3 md:mb-8 mt-20 md:mt-24 xl:w-[1110px] xl:space-x-8 xl:mt-44 xl:px-10">
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-headphones.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-12">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">HEADPHONES</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="" class="text-overline text-platadark font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-speakers.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-12">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">SPEAKERS</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="" class="text-overline text-platadark font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-earphones.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-12">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">EARPHONES</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="" class="text-overline text-platadark font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</div>
+

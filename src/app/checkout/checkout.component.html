@@ -1,0 +1,183 @@
+<div class="relative">
+  <div *ngIf="showBg" class="bg-black opacity-60 h-full w-full bg-cover absolute z-20" (click)="clickOutsideCart()"></div>
+  <div *ngIf="showOrder" class="bg-black opacity-60 h-full w-full bg-cover absolute z-40"></div>
+  <div *ngIf="showOrder" class="bg-platalight flex flex-col px-6 py-7 md:px-7 md:py-8 xl:py-12 xl:px-12 space-y-6 w-[327px] md:w-[540px] absolute z-50 top-40 left-6 md:left-1/4 xl:left-1/3 rounded-lg transformar">
+    <img src="../../assets/checkout/icon-order-confirmation.svg" alt="" class="h-[64px] w-[64px]">
+    <h4 class="text-H4 text-plomo font-semibold">THANK YOU <br>FOR YOUR ORDER</h4>
+    <p class="text-H6 text-platadark">You will receive a confirmation email shortly</p>
+    <div class="flex flex-col md:flex-row pb-6">
+      <div class="bg-plata p-4 rounded-t-lg md:rounded-l-lg md:rounded-b-none w-[263px] md:w-[246px]">
+        <div class="flex flex-row items-start border-b-[1px] pb-4 border-gray-300">
+          <div class="flex items-start text-body font-semibold space-x-4">
+            <div>
+              <img src="{{carrito[0].imagen}}" alt="" class="w-[50px] h-[50px] rounded-lg mr-3">
+            </div>
+            <div class="flex flex-col">
+              <p>{{carrito[0].nombre}}</p>
+              <p class="text-platadark">{{carrito[0].precio | currency}} </p>
+            </div>
+          </div>
+          <div class="">
+            <div class="text-overline text-platadark font-semibold pt-[4px] pl-12">x{{carrito[0].cantidad}}</div>
+          </div>
+        </div>
+        <p class="text-subtitle text-platadark font-semibold text-center pt-3" *ngIf="carrito.length > 1">And {{carrito.length - 1}} other item(s)</p>
+      </div>
+      <div class="bg-plomo w-[263px] md:w-[198px] flex flex-col items-center justify-center space-y-4 p-4 text-platalight text-center rounded-b-lg md:rounded-r-lg md:rounded-b-none">
+        <p class="text-body font-medium">TOTAL</p>
+        <P class="text-body font-semibold">{{total | currency}} </P>
+      </div>
+    </div>
+    <a href="/home" class="h-12 w-full mt-6 mb-7 bg-marron hover:bg-beige hover:cursor-pointer text-subtitle tracking-wide font-medium
+        text-platalight text-center pt-3" (click)="vaciarCarrito()">
+          BACK TO HOME
+    </a>
+  </div>
+  <header class="bg-black md:px-10 xl:px-40 text-white w-full">
+    <app-header></app-header>
+  </header>
+  <main class="flex flex-col items-center bg-plata xl:px-20" (click)="outsideHamMenu()">
+    <div class="flex justify-start w-[327px] md:w-[689px] xl:w-[1110px]">
+      <a href="" class="text-body text-platadark pt-4 pb-6 md:pt-12 md:pb-7">Go Back</a>
+    </div>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="flex flex-col items-center justify-center space-y-8 pb-28 xl:flex-row xl:space-x-6 xl:space-y-0">
+      <div class="bg-platalight rounded-lg space-y-5 px-6 py-7 md:px-7 md:py-8 xl:py-16 xl:px-12 w-[327px] md:w-[689px] xl:w-[730px] ">
+        <h3 class="text-H3 text-plomo font-semibold pb-8">CHECKOUT</h3>
+        <p class="text-overline text-marron font-semibold tracking-normal">BILLING DETAILS</p>
+        <div class="flex flex-col md:flex-row md:space-x-4">
+          <div class="flex flex-col space-y-1 md:basis-1/2">
+            <label class="text-subtitle font-semibold">Name</label>
+            <input [formControl]="nameControl" type="text" class="w-full h-12 px-6 text-overline font-semibold text-plomo border-gray-300 border-[1px]
+            caret-marron focus:border-marron focus:outline-none rounded-lg bg-transparent" [ngClass]="{'border-red-600': nameControl.invalid && nameControl.touched}">
+            <label *ngIf="nameControl.hasError('required') && nameControl.touched" for="" class="text-red-600 text-subtitle">This field is required</label>
+          </div>
+          <div class="flex flex-col space-y-1 md:basis-1/2">
+            <label class="text-subtitle font-semibold">Email Adress</label>
+            <input [formControl]="emailControl" type="text" class="w-full h-12 px-6 text-overline font-semibold text-plomo border-gray-300 border-[1px]
+            caret-marron focus:border-marron focus:outline-none rounded-lg bg-transparent" [ngClass]="{'border-red-600': emailControl.invalid && emailControl.touched}">
+            <label *ngIf="emailControl.hasError('required') && emailControl.touched" for="" class="text-red-600 text-subtitle">This field is required</label>
+            <label *ngIf="emailControl.hasError('email') && emailControl.touched && emailControl" for="" class="text-red-600 text-subtitle">Invalid email</label>
+          </div>
+        </div>
+        <div class="flex flex-col space-y-1">
+          <label class="text-subtitle font-semibold">Phone Number</label>
+          <input [formControl]="phoneControl" type="text" class="w-full h-12 md:w-72 px-6 text-overline font-semibold text-plomo border-gray-300 border-[1px]
+          caret-marron focus:border-marron focus:outline-none rounded-lg bg-transparent" [ngClass]="{'border-red-600': phoneControl.invalid && phoneControl.touched}">
+          <label *ngIf="phoneControl.hasError('required') && phoneControl.touched" for="" class="text-red-600 text-subtitle">This field is required</label>
+          <label *ngIf="phoneControl.hasError('pattern') && phoneControl.touched" for="" class="text-red-600 text-subtitle">Numbers only</label>
+        </div>
+        <p class="text-overline text-marron font-semibold tracking-normal pt-9">SHIPPING INFO</p>
+        <div class="flex flex-col space-y-1">
+          <label class="text-subtitle font-semibold">Adress</label>
+          <input [formControl]="adressControl" type="text" class="w-full h-12 px-6 text-overline font-semibold text-plomo border-gray-300 border-[1px]
+          caret-marron focus:border-marron focus:outline-none rounded-lg bg-transparent" [ngClass]="{'border-red-600': adressControl.invalid && adressControl.touched}">
+          <label *ngIf="adressControl.hasError('required') && adressControl.touched" for="" class="text-red-600 text-subtitle">This field is required</label>
+        </div>
+        <div class="flex flex-col md:flex-row md:space-x-4">
+          <div class="flex flex-col space-y-1 md:basis-1/2">
+            <label class="text-subtitle font-semibold">ZIP Code</label>
+            <input [formControl]="zipCodeControl" type="text" class="w-full h-12 px-6 text-overline font-semibold text-plomo border-gray-300 border-[1px]
+            caret-marron focus:border-marron focus:outline-none rounded-lg bg-transparent" [ngClass]="{'border-red-600': zipCodeControl.invalid && zipCodeControl.touched}">
+            <label *ngIf="zipCodeControl.hasError('required') && zipCodeControl.touched" for="" class="text-red-600 text-subtitle">This field is required</label>
+          </div>
+          <div class="flex flex-col space-y-1 md:basis-1/2">
+            <label class="text-subtitle font-semibold">City</label>
+            <input [formControl]="cityControl" type="text" class="w-full h-12 px-6 text-overline font-semibold text-plomo border-gray-300 border-[1px]
+            caret-marron focus:border-marron focus:outline-none rounded-lg bg-transparent" [ngClass]="{'border-red-600': cityControl.invalid && cityControl.touched}">
+            <label *ngIf="cityControl.hasError('required') && cityControl.touched" for="" class="text-red-600 text-subtitle">This field is required</label>
+          </div>
+        </div>
+        <div class="flex flex-col space-y-1">
+          <label class="text-subtitle font-semibold">Country</label>
+          <input [formControl]="countryControl" type="text" class="w-full h-12 md:w-72 px-6 text-overline font-semibold text-plomo border-gray-300 border-[1px]
+          caret-marron focus:border-marron focus:outline-none rounded-lg bg-transparent" [ngClass]="{'border-red-600': countryControl.invalid && countryControl.touched}">
+          <label *ngIf="countryControl.hasError('required') && countryControl.touched" for="" class="text-red-600 text-subtitle">This field is required</label>
+        </div>
+        <p class="text-overline text-marron font-semibold tracking-normal pt-9">PAYMENT DETAILS</p>
+        <div class="flex flex-col md:flex-row">
+          <p class="text-subtitle text-plomo font-semibold basis-1/2">Payment Method</p>
+          <div class="flex flex-col basis-1/2 space-y-4 pt-3 md:pt-1">
+            <div class="h-12 w-full px-6 border-[1px] border-marron rounded-lg flex items-center">
+              <div class="h-6 w-6 border border-gray-300 rounded-full flex items-center justify-center">
+                <div class="h-3 w-3 rounded-full" [ngClass]="{'bg-marron': bg, 'bg-platalight': !bg}" (click)="changeBg()"></div>
+              </div>
+              <label for="" class="px-4 text-overline font-semibold">e-Money</label>
+            </div>
+            <div class="h-12 w-full px-6 border-[1px] border-marron rounded-lg flex items-center">
+              <div class="h-6 w-6 border border-gray-300 rounded-full flex items-center justify-center">
+                <div class="h-3 w-3 rounded-full" [ngClass]="{'bg-marron': !bg, 'bg-platalight': bg}" (click)="changeBg2()"></div>
+              </div>
+              <label for="" class="px-4 text-overline font-semibold">Cash On Delivery</label>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:flex items-center text-body text-platadark space-x-7 pt-3 ">
+          <img src="../../assets/checkout/icon-cash-on-delivery.svg" alt="">
+          <p>The ‘Cash on Delivery’ option enables you to pay in cash when our delivery <br class="hidden xl:block">courier arrives at your residence.
+            Just make sure your address is correct so <br class="hidden xl:block">that your order will not be cancelled.</p>
+        </div>
+      </div>
+      <div class="bg-platalight rounded-lg space-y-5 px-6 py-7 md:px-7 md:py-8 w-[327px] md:w-[689px] xl:py-10 xl:px-8 xl:w-[350px] self-start">
+        <h6 class="text-H6 text-plomo font-semibold tracking-normal">SUMMARY</h6>
+        <div *ngFor="let item of carrito, let i = index" class="">
+          <div class="flex items-center w-auto justify-between">
+            <div class="flex items-center space-x-4 text-body font-semibold">
+              <div>
+                <img src="{{item.imagen}}" alt="" class="w-[64px] h-[64px] rounded-lg">
+              </div>
+              <div class="flex flex-col">
+                <p>{{item.nombre}}</p>
+                <p class="text-platadark">{{item.precio | currency}} </p>
+              </div>
+            </div>
+            <div>
+              <div class="text-overline text-platadark font-semibold">x{{item.cantidad}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-between items-center pt-7">
+          <p class="text-body text-platamedium font-medium">TOTAL</p>
+          <p class="text-body text-plomo font-semibold">{{total | currency}}</p>
+        </div>
+        <button type="submit" *ngIf="carrito.length > 0" class="h-12 w-full mt-6 mb-7 bg-marron hover:bg-beige hover:cursor-pointer text-subtitle tracking-wide font-medium
+        text-platalight text-center">
+          CONTINUE & PAY
+        </button>
+      </div>
+    </form>
+  </main>
+</div>
+<footer class=" bg-plomo w-full pb-10 px-6 md:px-10 xl:px-40">
+  <div class="w-full flex justify-center md:justify-start">
+  <div class="bg-marron h-1 w-[100px]"></div>
+  </div>
+  <div class="flex flex-col items-center md:flex-row md:justify-between">
+    <img src="../../../assets/shared/desktop/logo.svg" routerLink="/home" class="my-12 hover:cursor-pointer">
+    <div class="flex flex-col text-center text-subtitle tracking-wider text-platalight space-y-4 md:flex-row md:space-x-8 md:space-y-0 md:ml-10">
+      <a href="/home" class="hover:text-marron">HOME</a>
+      <a href="/headphones" class="hover:text-marron">HEADPHONES</a>
+      <a href="/speakers" class="hover:text-marron">SPEAKERS</a>
+      <a href="/earphones" class="hover:text-marron">EARPHONES</a>
+    </div>
+  </div>
+  <div class="flex justify-between items-center">
+    <p class="text-overline font-medium tracking-wide text-center text-platadark leading-relaxed my-12 md:text-left">
+      Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and<br class="hidden md:block">sound
+      specialists who are devoted to helping you get the most out of personal audio. Come and<br class="hidden md:block">visit our demo facility -
+      we’re open 7 days a week.
+    </p>
+    <div class="hidden xl:flex xl:justify-center xl:space-x-4 items-center">
+      <img src="../../../assets/shared/desktop/icon-facebook.svg" alt="" class="hover:cursor-pointer">
+      <img src="../../../assets/shared/desktop/icon-twitter.svg" alt="" class="hover:cursor-pointer">
+      <img src="../../../assets/shared/desktop/icon-instagram.svg" alt="" class="hover:cursor-pointer">
+    </div>
+  </div>
+  <div class="text-overline font-semibold tracking-normal text-center w-full text-platadark leading-relaxed md:flex md:justify-between md:items-center">
+    <span>Copyright 2021. All Rights Reserved</span>
+    <div class="flex justify-center space-x-4 mt-12 items-center md:mt-0 xl:hidden">
+      <img src="../../../assets/shared/desktop/icon-facebook.svg" alt="" class="hover:cursor-pointer">
+      <img src="../../../assets/shared/desktop/icon-twitter.svg" alt="" class="hover:cursor-pointer">
+      <img src="../../../assets/shared/desktop/icon-instagram.svg" alt="" class="hover:cursor-pointer">
+    </div>
+  </div>
+</footer>

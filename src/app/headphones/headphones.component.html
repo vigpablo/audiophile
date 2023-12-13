@@ -1,0 +1,94 @@
+<div class="relative">
+  <div *ngIf="showBg" class="bg-black opacity-60 h-full w-full bg-cover absolute z-20" (click)="clickOutsideCart()"></div>
+  <header class="bg-black md:px-10 xl:px-40 text-white w-full">
+    <app-header></app-header>
+    <div class="bg-black flex items-center justify-center h-36 text-H5 font-medium tracking-normal">
+      HEADPHONES
+    </div>
+  </header>
+  <main class="mt-16 md:mt-32 flex flex-col items-center" (click)="outsideHamMenu()">
+    <section class="flex flex-col items-center space-y-32 xl:space-y-40">
+      <div class="flex flex-col items-center xl:space-x-20 xl:flex-row">
+        <img src="../../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg" alt="" class="h-[560px] hidden rounded-lg xl:block">
+        <img src="../../assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg" alt="" class="h-[352px] hidden rounded-lg md:block xl:hidden">
+        <img src="../../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg" alt="" class="h-[352px] w-[327px] rounded-lg md:hidden">
+        <div class="flex flex-col justify-center items-center mt-8 md:mt-14 xl:mt-0 xl:items-start">
+          <span class="text-overline text-marron tracking-widest font-medium">
+            NEW PRODUCT
+          </span>
+          <h3 class="text-H4 text-plomo font-semibold mt-6 tracking-normal md:text-H2"> XX99 MARK II <br>HEADPHONES</h3>
+          <P class="text-body text-platadark font-normal my-10 text-center xl:text-left w-[327px] md:w-[auto]">
+            The new XX99 Mark II headphones is the pinnacle of pristine <br class="hidden xl:block">audio. It redefines <br class="xl:hidden">your premium
+            headphone experience by <br class="hidden xl:block">reproducing the balanced depth and <br class="xl:hidden">precision of studio-quality <br class="hidden xl:block">sound.
+          </P>
+          <div routerLink="/headphones/markii" class="h-12 w-40 bg-marron hover:bg-beige hover:cursor-pointer text-subtitle tracking-wide font-medium text-platalight text-center pt-3">
+            SEE PRODUCT
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center xl:space-x-20 xl:flex-row">
+        <img src="../../assets/product-xx99-mark-one-headphones/tablet/image-category-page-preview.jpg" alt="" class="h-[352px] hidden rounded-lg md:block xl:hidden">
+        <img src="../../assets/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg" alt="" class="h-[352px] rounded-lg md:hidden">
+        <div class="flex flex-col justify-center items-center mt-4 md:mt-14 xl:mt-0 xl:items-start">
+          <h3 class="text-H4 text-plomo font-semibold mt-5 tracking-normal md:text-H2"> XX99 MARK I <br>HEADPHONES</h3>
+          <P class="text-body text-platadark font-normal my-10 text-center xl:text-left w-[327px] md:w-[auto]">
+            As the gold standard for headphones, the classic XX99 Mark I <br class="hidden xl:block">offers detailed and <br class="xl:hidden">accurate audio reproduction for <br class="hidden xl:block">audiophiles,
+            mixing engineers, and music <br class="xl:hidden">aficionados alike in <br class="hidden xl:block">studios and on the go.
+          </P>
+          <div routerLink="/headphones/marki" class="h-12 w-40 bg-marron hover:bg-beige hover:cursor-pointer text-subtitle tracking-wide font-medium text-platalight text-center pt-3">
+            SEE PRODUCT
+          </div>
+        </div>
+        <div>
+        <img src="../../assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg" alt="" class="h-[560px] rounded-lg hidden xl:block">
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center xl:space-x-20 xl:flex-row">
+        <img src="../../assets/product-xx59-headphones/desktop/image-category-page-preview.jpg" alt="" class="h-[560px] hidden rounded-lg xl:block">
+        <img src="../../assets/product-xx59-headphones/tablet/image-category-page-preview.jpg" alt="" class="h-[352px] hidden rounded-lg md:block xl:hidden">
+        <img src="../../assets/product-xx59-headphones/mobile/image-category-page-preview.jpg" alt="" class="h-[352px] rounded-lg md:hidden">
+        <div class="flex flex-col justify-center items-center mt-5 md:mt-14 xl:mt-0 xl:items-start">
+          <h3 class="text-H4 text-plomo font-semibold mt-6 text-center tracking-normal xl:text-start md:text-H2">XX59 <br>HEADPHONES</h3>
+          <P class="text-body text-platadark font-normal my-10 text-center xl:text-left w-[327px] md:w-[auto]">
+            Enjoy your audio almost anywhere and customize it to your specific <br class="hidden xl:block">tastes with <br class="xl:hidden">the XX59 headphones.
+            The stylish yet durable versatile <br class="hidden xl:block">wireless headset is a <br class="xl:hidden">brilliant companion at home <br class="hidden xl:block">
+            or on the move.
+          </P>
+          <div routerLink="/headphones/xx59" class="h-12 w-40 bg-marron hover:bg-beige hover:cursor-pointer text-subtitle tracking-wide font-medium text-platalight text-center pt-3">
+            SEE PRODUCT
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col items-center md:flex-row md:justify-center mt-20 md:w-[689px] md:space-x-3 md:mb-8 md:mt-24 xl:w-[1110px] xl:space-x-8 xl:mt-44 xl:px-10">
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-headphones.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-12">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">HEADPHONES</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="" class="text-overline text-platadark hover:text-marron font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-speakers.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-12">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">SPEAKERS</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="" class="text-overline text-platadark hover:text-marron font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+      <div class="h-40 w-[327px] rounded-lg bg-plata mt-24 relative flex flex-col items-center xl:h-48 xl:w-[350px]">
+        <img src="../../assets/shared/desktop/image-category-thumbnail-earphones.png" alt="" class="w-36 absolute bottom-20 left-[85px] md:left-14 xl:w-56 xl:left-12">
+        <span class="mt-20 text-body font-semibold tracking-wide xl:mt-24">EARPHONES</span>
+        <div class="flex justify-center mt-3 items-center">
+          <a href="" class="text-overline text-platadark hover:text-marron font-semibold tracking-wide mr-3">SHOP</a>
+          <img src="../../assets/shared/desktop/icon-arrow-right.svg" alt="" class="h-[13px]">
+        </div>
+      </div>
+    </section>
+  </main>
+  <app-footer></app-footer>
+</div>
+

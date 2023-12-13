@@ -1,0 +1,28 @@
+<header class="flex">
+  <nav class="flex justify-between items-center border-line border-b-[1px] w-full py-9 z-30">
+    <div class="flex items-center">
+      <img src="../../../assets/shared/tablet/icon-hamburger.svg" alt="" class="xl:hidden pl-6 md:pl-0 hover:cursor-pointer" (click)="toggleMenu()">
+      <img src="../../../assets/shared/desktop/logo.svg" alt="" routerLink="/home" class="ml-8 xl:ml-0 hidden md:block hover:cursor-pointer">
+      <div class="sideMenu w-0 xl:hidden" [ngClass]="{'w-[250px]': menu}">
+        <img src="../../../assets/shared/tablet/icon-hamburger.svg" alt="" class="pl-6 mb-4 md:pl-10 opacity-80 hover:cursor-pointer" (click)="toggleMenu()">
+        <a href="/home">HOME</a>
+        <a href="/headphones">HEADPHONES</a>
+        <a href="/speakers">SPEAKERS</a>
+        <a href="/earphones">EARPHONES</a>
+      </div>
+    </div>
+    <div class="hidden xl:flex text-subtitle tracking-wider text-platalight space-x-8">
+      <a href="/home" class="hover:text-marron">HOME</a>
+      <a href="/headphones" class="hover:text-marron">HEADPHONES</a>
+      <a href="/speakers" class="hover:text-marron">SPEAKERS</a>
+      <a href="/earphones" class="hover:text-marron">EARPHONES</a>
+    </div>
+      <img src="../../../assets/shared/desktop/logo.svg" alt="" routerLink="/home" class="md:hidden hover:cursor-pointer">
+      <img src="../../../assets/shared/desktop/icon-cart.svg" alt="" class="pr-6 md:pr-0 hover:cursor-pointer" (click)="toggleShow()">
+  </nav>
+</header>
+<div *ngIf="show" class="w-[327px] md:w-[377px] absolute z-30 end-6 md:end-10 xl:end-40 transformar">
+  <app-cart></app-cart>
+</div>
+
+

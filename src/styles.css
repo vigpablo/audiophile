@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.sideMenu {
+  @apply flex flex-col items-start fixed h-full overflow-x-hidden top-0 left-0 pt-10 bg-plomo duration-100
+    space-y-8 opacity-95
+}
+
+.sideMenu a {
+  @apply px-12 text-overline text-platalight font-semibold hover:text-marron
+}
+
+.transformar{
+  animation: fadeIn 0.7s
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
